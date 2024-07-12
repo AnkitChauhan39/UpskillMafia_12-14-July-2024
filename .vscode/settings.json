@@ -1,0 +1,8 @@
+{
+    "emmet.showSuggestionsAsSnippets": true,
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.useInlineCompletions": true,
+    "tailwindCSS.emmetCompletions": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "notebook.defaultFormatter": "esbenp.prettier-vscode"
+}

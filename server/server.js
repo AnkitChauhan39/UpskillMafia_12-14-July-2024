@@ -18,12 +18,12 @@ if(require.main === module){
     });
 
     io.on("connection", (socket) => {
-        console.og("User connected : ",socket.id);
+        console.log("User connected : ",socket.id);
     });
     
     app.use(cors({origin : true}));
     
-    app.listen(PORT, () => {
+    server.listen(PORT, () => {
         console.log('Server started successfully');
         console.log(`http://localhost:${PORT}`);
     });

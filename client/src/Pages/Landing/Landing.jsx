@@ -3,6 +3,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import LandingHero from "../../components/Landing Hero/LandingHero";
 import Updates from "../../components/LatestUpdate/Updates";
 import AboutSection from "../../components/About/AboutSection";
+import Testimonial from '../../components/Testimonials/Testimonial'
 
 export default function Landing() {
   return (
@@ -11,6 +12,7 @@ export default function Landing() {
       <LandingHero />
       <AboutSection />
       <Updates />
+      <Testimonial/>
     </div>
   );
 }

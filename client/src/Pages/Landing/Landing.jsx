@@ -7,26 +7,20 @@ import Testimonial from "../../components/Testimonials/Testimonial";
 import Curious from "../../components/Curious/Curious";
 import Social from "../../components/SocialLinks/Social";
 import Contact from "../../components/Contact/Contact";
+import LandingMap from "../../components/Landing map/LandingMap";
 
 export default function Landing() {
-// <<<<<<< HEAD
-//   return (
-//     <div className="relative p-4 box-border">
-//         <NavBar />
-//       <LandingHero />
-//       <AboutSection />
-//       <Curious />
-//       {/* <Updates />
-//       <Testimonial/> */}
-// =======
   return ( 
     <div className="relative p-4">
       <NavBar />
       <LandingHero />
       <AboutSection />
-      <Updates />
+      <LandingMap />
+      {/* <Updates />
       <Testimonial/> 
       <Curious/>
+      <Social />
+      <Contact /> */}
     </div>
   );
 }

@@ -40,7 +40,7 @@ const AboutSection = memo(() => {
     },
 ]);
 return (
-    <div className="flex flex-col gap-10 justify-center min-h-dvh sm:px-20 h-fit items-center pt-20">
+    <div className="flex flex-col gap-10 justify-center min-h-dvh h-fit items-center pt-20">
       <div className="heading text-5xl font-bold text-center">What we do</div>
       <div className="description text-xl text-center">
         At EcoSaath, we are committed to empowering rag pickers while providing
@@ -48,7 +48,7 @@ return (
         platform serves as a trusted link between the community and businesses,
         ensuring mutual benefits through:
       </div>
-      <div className="cards flex flex-wrap gap-10 items-center justify-center sm:flex-row flex-col">
+      <div className="cards flex flex-wrap gap-10 items-center justify-center">
         {serviceDetails.map((elem) => {
           return (
             <AboutCard

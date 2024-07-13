@@ -2,7 +2,7 @@ import React, { memo } from "react";
 
 const AboutCard = memo(({ imgUrl, heading, description }) => {
   return (
-    <div className="p-4 rounded-3xl flex-1 max-w-96 shadow-[0_0_4px_gray] sm:min-w-60 self-stretch">
+    <div className="p-4 rounded-3xl max-w-72 shadow-[0_0_4px_gray] self-stretch">
       <div className="img rounded-lg overflow-hidden flex-1 aspect-square mb-4">
         <img src={imgUrl} alt={heading} className="h-full w-full object-cover" />
       </div>

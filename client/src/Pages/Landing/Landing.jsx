@@ -9,10 +9,10 @@ export default function Landing() {
   return (
     <div className="relative p-4">
       <NavBar />
-      <LandingHero />
-      <AboutSection />
-      <Updates />
-      <Testimonial/>
+      {/* <LandingHero />
+      <AboutSection /> */}
+      {/* <Updates />
+      <Testimonial/> */}
     </div>
   );
 }

@@ -5,6 +5,7 @@ import Updates from "../../components/LatestUpdate/Updates";
 import AboutSection from "../../components/About/AboutSection";
 import Testimonial from '../../components/Testimonials/Testimonial'
 import Curious from "../../components/Curious/Curious";
+import Social from "../../components/SocialLinks/Social";
 
 export default function Landing() {
   return ( 
@@ -15,6 +16,7 @@ export default function Landing() {
       <Updates />
       <Testimonial/> 
       <Curious/>
+      <Social/>
     </div>
   );
 }

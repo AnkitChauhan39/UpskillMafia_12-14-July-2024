@@ -31,6 +31,6 @@ if(require.main === module){
         console.log(`http://localhost:${PORT}`);
     });
     
-    app.get('/', rootRouter);
-    app.get('/contactUs',contactUsRouter);
+    app.use('/', rootRouter);
+    app.use('/contactUs',contactUsRouter);
 }

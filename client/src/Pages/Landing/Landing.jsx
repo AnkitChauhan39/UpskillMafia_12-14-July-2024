@@ -8,11 +8,12 @@ import Curious from "../../components/Curious/Curious";
 import Social from "../../components/SocialLinks/Social";
 import Contact from "../../components/Contact/Contact";
 import LandingMap from "../../components/Landing map/LandingMap";
+import Organiztion from "../../components/Siginupforms/Organiztion";
 
 export default function Landing() {
   return ( 
     <div className="relative p-4">
-      <NavBar />
+      {/* <NavBar />
       <LandingHero />
       <AboutSection />
       <Updates />
@@ -20,7 +21,8 @@ export default function Landing() {
       <Curious/>
       <Social />
       <Contact />
-      <LandingMap />
+      <LandingMap /> */}
+      <Organiztion/>
     </div>
   );
 }

@@ -26,15 +26,15 @@ const Testimonial = () => {
         })}
       </div>
       <div className="py-10 mt-10 flex flex-wrap justify-around gap-[100px]">
-        <div className="w-[300px] flex justify-center items-center flex-col">
+        <div className="md:w-[300px] flex justify-center items-center flex-col">
           <div className="text-[60px] font-bold text-gray-500">10,000+</div>
           <div className="text-[22px] font-semibold">Happy Users</div>
         </div>
-        <div className="w-[300px] flex justify-center items-center flex-col">
+        <div className="md:w-[300px] flex justify-center items-center flex-col">
           <div className="text-[60px] font-bold text-gray-500">500+</div>
           <div className="text-[22px] font-semibold">Verified Pickers</div>
         </div>
-        <div className="w-[300px] flex justify-center  items-center flex-col">
+        <div className="md:w-[300px] flex justify-center  items-center flex-col">
           <div className="text-[60px] font-bold text-gray-500">500,000+</div>
           <div className="text-[22px] font-semibold">Pounds Recycled</div>
         </div>

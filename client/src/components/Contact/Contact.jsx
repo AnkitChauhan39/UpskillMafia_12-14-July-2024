@@ -9,17 +9,17 @@ const Contact = () => {
 
   return (
     <div className="flex flex-col justify-center items-center p-10" >
-      <div className="text-[44px] font-bold p-8" >Get in Touch Now</div>
+      <div className="text-[24px] sm:text-[34px] md:text-[44px] font-bold p-8" >Get in Touch Now</div>
       <div className=" flex flex-col gap-4 text-[18px] " >
-        <div className="flex gap-4 " >
+        <div className="flex gap-4 flex-wrap" >
           <input
            value={name}
           onChange={ (e) => { setName(e.target.value)} }
-           className="border md:w-[400px] shadow-lg py-4 px-8 rounded-full " placeholder="Name" />
+           className="border w-full md:w-[400px] shadow-lg py-4 px-8 rounded-full " placeholder="Name" />
           <input
           value={email}
           onChange={ (e) => { setEmail(e.target.value)} }
-           className="border md:w-[400px] shadow-lg py-4 px-8 rounded-full " placeholder="Email" />
+           className="border w-full md:w-[400px] shadow-lg py-4 px-8 rounded-full " placeholder="Email" />
         </div>
 
         <div>

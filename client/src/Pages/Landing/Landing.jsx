@@ -4,9 +4,10 @@ import LandingHero from "../../components/Landing Hero/LandingHero";
 import Updates from "../../components/LatestUpdate/Updates";
 import AboutSection from "../../components/About/AboutSection";
 import Testimonial from '../../components/Testimonials/Testimonial'
+import Curious from "../../components/Curious/Curious";
 
 export default function Landing() {
-  return (
+  return ( 
     <div className="relative p-4">
       <NavBar />
       {/* <LandingHero />

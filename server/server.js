@@ -5,6 +5,9 @@ const {createServer} = require('http');
 const {Server} = require('socket.io');
 const ConnectDB = require('./src/db/connection');
 
+const rootRouter = require('./src/routes/root');
+const contactUsRouter = require('./src/routes/contactUs');
+
 if(require.main === module){
 
     ConnectDB();
@@ -28,7 +31,6 @@ if(require.main === module){
         console.log(`http://localhost:${PORT}`);
     });
     
-    app.get('/', (req,res) => {
-        res.send("Welcome to EcoSathi Server");
-    });
+    app.use('/', rootRouter);
+    app.use('/contactUs',contactUsRouter);
 }

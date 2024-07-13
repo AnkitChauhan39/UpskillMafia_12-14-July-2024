@@ -9,4 +9,4 @@ const ragPickerSchema = new mongoose.Schema({
 
 const RagPicker = mongoose.model("RagPicker",ragPickerSchema);
 
-module.exports = User;
+module.exports = RagPicker;

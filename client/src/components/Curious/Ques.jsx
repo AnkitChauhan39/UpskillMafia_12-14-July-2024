@@ -6,8 +6,8 @@ const Ques = ({ ques, ans }) => {
 
   const [show, setShow] = useState(false);
   return (
-    <div className=" w-[800px] py-6 px-10 border shadow-md  rounded-2xl ">
-      <div className="text-[24px] font-semibold flex justify-between items-center py-2">
+    <div className=" md:w-[800px] py-6 px-10 border shadow-md  rounded-2xl ">
+      <div className=" text-[18px] md:text-[24px] font-semibold flex justify-between items-center py-2">
         <span>{ques}</span>
         {!show && (
           <span>

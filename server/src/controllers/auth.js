@@ -3,6 +3,25 @@ const RagPicker = require("../models/ragpicker");
 const Organisation = require("../models/organisation");
 const sendEmail = require('../utils/email');
 
+const getAccountType = async (req, res) => {
+    const email = req.body.email;
+
+    try {
+        if(await RagPicker.findOne({ "userInfo.email": email })){
+            return res.send({type : "ragPicker"});
+        }else if(await Organisation.findOne({ "userInfo.email": email })){
+            return res.send({type : "organisation"});
+        }else if(await User.findOne({ "userInfo.email": email })){
+            return res.send({type : "user"});
+        }else{
+            return res.send({type : "none"});
+        }
+
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 const auth = async (req, res) => {
     const data = req.body;
     console.log(data.userInfo);
@@ -87,4 +106,4 @@ const auth = async (req, res) => {
   }
 };
 
-module.exports = auth;
+module.exports = {auth, getAccountType};

@@ -35,10 +35,10 @@ const contactUs = async (req,res) => {
 
         sendEmail(email, subject, html)
 
-        res.status(201);
+        res.status(201).send("Email send!");
     } catch (err) {
         console.error(err)
-        res.status(500);
+        res.status(500).send('Error sending email!');
     }
 };
 

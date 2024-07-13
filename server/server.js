@@ -6,6 +6,7 @@ const {Server} = require('socket.io');
 const ConnectDB = require('./src/db/connection');
 
 const rootRouter = require('./src/routes/root');
+const authRouter = require('./src/middleware/auth');
 const contactUsRouter = require('./src/routes/contactUs');
 
 if(require.main === module){
@@ -32,5 +33,6 @@ if(require.main === module){
     });
     
     app.use('/', rootRouter);
+    app.use('/auth',authRouter);
     app.use('/contactUs',contactUsRouter);
 }

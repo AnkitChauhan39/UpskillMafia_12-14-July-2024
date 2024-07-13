@@ -6,6 +6,7 @@ import AboutSection from "../../components/About/AboutSection";
 import Testimonial from '../../components/Testimonials/Testimonial'
 import Curious from "../../components/Curious/Curious";
 import Social from "../../components/SocialLinks/Social";
+import Contact from "../../components/Contact/Contact";
 
 export default function Landing() {
   return ( 
@@ -17,6 +18,7 @@ export default function Landing() {
       <Testimonial/> 
       <Curious/>
       <Social/>
+      <Contact/> 
     </div>
   );
 }

@@ -8,7 +8,7 @@ import { FaTwitch } from "react-icons/fa";
 const Social = () => {
   return (
     <div className="flex flex-col  justify-center items-center p-10" >
-      <div className="text-[44px] font-semibold p-4"  >Join Our Eco Revolution</div>
+      <div className="text-[44px] font-bold p-4"  >Join Our Eco Revolution</div>
       <div className="flex gap-10 p-10 text-[40px] text-blue-600 " >
         <a>
           <FaFacebookF  />

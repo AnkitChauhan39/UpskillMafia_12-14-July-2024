@@ -38,7 +38,7 @@ const AboutSection = memo(() => {
       description:
         " Users can support rag pickers through our secure donation platform, directly impacting their livelihood and well-being.",
     },
-]);
+], []);
 return (
     <div className="flex flex-col gap-10 justify-center min-h-dvh h-fit items-center pt-20">
       <div className="heading text-5xl font-bold text-center">What we do</div>

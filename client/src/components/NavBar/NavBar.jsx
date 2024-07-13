@@ -4,7 +4,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 
 const NavBar = memo(() => {
   return (
-    <div className="p-4 rounded-full justify-between flex bg-white bg-opacity-70 items-center fixed top-8 lg:w-4/5 w-11/12 left-1/2 -translate-x-1/2 z-10 max-w-full">
+    <div className="p-4 rounded-full justify-between flex bg-white bg-opacity-70 items-center fixed top-8 left-8 z-10 right-8">
       <div className="logo flex items-center gap-4">
         <div className="img bg-black w-32 max-w-full max-[400px]:w-24 overflow-hidden rounded-full flex-1 aspect-[128/56] ">
           {/* <img src="" alt="" className='w-full h-full object-cover' /> */}

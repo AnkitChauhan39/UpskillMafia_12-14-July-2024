@@ -1,7 +1,9 @@
 import React from "react";
 import SecondaryBtn from "../Secondary Btn/SecondaryBtn";
+import {useAuth0} from "@auth0/auth0-react"
 
 export default function LandingHero() {
+  const { loginWithRedirect } = useAuth0();
   return (
     <div
       className="h-[95vh] text-center flex flex-col justify-end items-center gap-4 text-white sm:pb-32 pb-20 border-green-800 border-2 rounded-xl after:content-[''] after:absolute after:w-full after:h-full after:bg-black after:top-0 after:bg-opacity-30 overflow-hidden after:z-0 relative bg-center"
@@ -19,7 +21,7 @@ export default function LandingHero() {
         Support local rag pickers with skills, knowledge, and healthcare.
         Together, we can create a cleaner, brighter future.
       </div>
-      <SecondaryBtn className="text-white p-4 rounded-full px-8 text-xl font-bold w-fit z-10">
+      <SecondaryBtn onClick={() => loginWithRedirect()} className="text-white p-4 rounded-full px-8 text-xl font-bold w-fit z-10">
         Join the Movement
       </SecondaryBtn>
     </div>

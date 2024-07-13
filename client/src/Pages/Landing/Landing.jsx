@@ -15,12 +15,12 @@ export default function Landing() {
       <NavBar />
       <LandingHero />
       <AboutSection />
-      <LandingMap />
-      {/* <Updates />
+      <Updates />
       <Testimonial/> 
       <Curious/>
       <Social />
-      <Contact /> */}
+      <Contact />
+      <LandingMap />
     </div>
   );
 }

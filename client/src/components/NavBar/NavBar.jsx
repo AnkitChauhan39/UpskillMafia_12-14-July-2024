@@ -1,8 +1,11 @@
 import React, { memo } from "react";
 import PrimaryBtn from "../Primary Btn/PrimaryBtn";
 import { RxHamburgerMenu } from "react-icons/rx";
+import {useAuth0} from "@auth0/auth0-react"
+
 
 const NavBar = memo(() => {
+  const { loginWithRedirect } = useAuth0();
   return (
     <div className="p-4 rounded-full justify-between flex bg-white bg-opacity-70 items-center fixed top-8 left-8 z-10 right-8">
       <div className="logo flex items-center gap-4">
@@ -23,7 +26,7 @@ const NavBar = memo(() => {
         </div>
       </div>
       <div className="callToAction flex gap-4 items-center">
-        <PrimaryBtn className="text-white w-32 h-14 rounded-full font-bold px-6 hidden min-[540px]:block">
+        <PrimaryBtn onClick={() => loginWithRedirect()} className="text-white w-32 h-14 rounded-full font-bold px-6 hidden min-[540px]:block">
           Join now
         </PrimaryBtn>
         <div className="hamburger shrink-0 md:hidden">

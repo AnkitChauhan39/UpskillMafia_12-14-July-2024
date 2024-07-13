@@ -7,14 +7,25 @@ import Testimonial from "../../components/Testimonials/Testimonial";
 import Curious from "../../components/Curious/Curious";
 
 export default function Landing() {
-  return (
-    <div className="relative p-4 box-border">
-        <NavBar />
+// <<<<<<< HEAD
+//   return (
+//     <div className="relative p-4 box-border">
+//         <NavBar />
+//       <LandingHero />
+//       <AboutSection />
+//       <Curious />
+//       {/* <Updates />
+//       <Testimonial/> */}
+// =======
+  return ( 
+    <div className="relative p-4">
+      <NavBar />
       <LandingHero />
       <AboutSection />
-      <Curious />
-      {/* <Updates />
-      <Testimonial/> */}
+      <Updates />
+      <Testimonial/> 
+      <Curious/>
+{/* >>>>>>> 515f26d8be7c24652b932a4a4c01d15a1f12d57d */}
     </div>
   );
 }

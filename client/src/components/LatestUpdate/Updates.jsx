@@ -28,7 +28,7 @@ const Updates = () => {
   return (
     <div className="w-full  bg-white opacity-90  flex flex-col justify-center items-center">
       <div className="p-8 text-[44px] font-semibold">Latest Updates</div>
-      <div className=" h-[800px] flex justify-around flex-wrap py-6 px-3">
+      <div className="flex justify-around flex-wrap py-6 px-3">
         {
           data.map( (ele,index) => {
             return <Card title={ele.title} date={ele.date} desc={ele.desc} />

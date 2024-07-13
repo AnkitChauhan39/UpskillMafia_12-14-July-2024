@@ -6,7 +6,7 @@ const Card = ({title,date,desc}) => {
   
   return (
     <div className="w-[350px] flex flex-col gap-4 h-fit rounded-2xl  p-4 border-black ">
-      <div className="w-[320px] h-[300px] rounded-2xl overflow-hidden shadow-black shadow-md">
+      <div className="md:w-[320px] md:h-[300px] rounded-2xl overflow-hidden shadow-black shadow-md">
         <img
           className="h-[100%] w-[100%] rounded-2xl object-cover"
           src={rag}

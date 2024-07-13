@@ -10,7 +10,7 @@ const Testimo = ({rev,name}) => {
         </span>
       </div>
       <div className="text-[24px]" >{name}</div>
-    </div>
+    </div> 
   );
 };
 

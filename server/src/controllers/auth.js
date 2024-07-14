@@ -1,5 +1,5 @@
 const User = require("../models/user");
-const RagPicker = require("../models/ragpicker");
+const RagPicker = require("../models/ragPicker");
 const Organisation = require("../models/organisation");
 const sendEmail = require('../utils/email');
 const OTPGenerator = require('../controllers/OTPGenerator')

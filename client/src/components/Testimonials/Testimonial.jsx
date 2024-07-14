@@ -3,6 +3,7 @@ import Testimo from "./Testimo";
 import man1 from "../../assets/Images/man1.jpeg"
 import man2 from "../../assets/Images/man2.jpeg"
 import girl from "../../assets/Images/girl.jpeg"
+import CountUp from 'react-countup';
 
 const data = [
   {
@@ -32,19 +33,28 @@ const Testimonial = () => {
         })}
       </div>
       <div className="py-10 mt-10 flex flex-wrap justify-around gap-[100px]">
-        <div className="md:w-[300px] flex justify-center items-center flex-col">
-          <div className="text-[60px] font-bold text-gray-500">10,000+</div>
-          <div className="text-[22px] font-semibold">Happy Users</div>
+      <div className="md:w-[300px] flex justify-center items-center flex-col">
+        <div className="text-[60px] font-bold text-gray-500">
+          <CountUp end={10000} duration={7} separator="," />
+          +
         </div>
-        <div className="md:w-[300px] flex justify-center items-center flex-col">
-          <div className="text-[60px] font-bold text-gray-500">500+</div>
-          <div className="text-[22px] font-semibold">Verified Pickers</div>
-        </div>
-        <div className="md:w-[300px] flex justify-center  items-center flex-col">
-          <div className="text-[60px] font-bold text-gray-500">500,000+</div>
-          <div className="text-[22px] font-semibold">Pounds Recycled</div>
-        </div>
+        <div className="text-[22px] font-semibold">Happy Users</div>
       </div>
+      <div className="md:w-[300px] flex justify-center items-center flex-col">
+        <div className="text-[60px] font-bold text-gray-500">
+          <CountUp end={500} duration={5} separator="," />
+          +
+        </div>
+        <div className="text-[22px] font-semibold">Verified Pickers</div>
+      </div>
+      <div className="md:w-[300px] flex justify-center items-center flex-col">
+        <div className="text-[60px] font-bold text-gray-500">
+          <CountUp end={500000} duration={10} separator="," />
+          +
+        </div>
+        <div className="text-[22px] font-semibold">Pounds Recycled</div>
+      </div>
+    </div>
     </div>
   );
 };

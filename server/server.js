@@ -10,6 +10,9 @@ const authRouter = require('./src/middleware/auth');
 const contactUsRouter = require('./src/routes/contactUs');
 const mapRouter = require('./src/routes/map');
 const chatbotRouter = require('./src/routes/chatbot');
+const userRouter = require('./src/routes/user');
+const ragPickerRouter = require('./src/routes/ragPicker');
+const organisationRouter = require('./src/routes/organisation');
 
 if(require.main === module){
 
@@ -39,4 +42,7 @@ if(require.main === module){
     app.use('/contactUs',contactUsRouter);
     app.use('/map',mapRouter);
     app.use('/chatbot',chatbotRouter);
+    app.use('/user',userRouter);
+    app.use('/ragPicker',ragPickerRouter);
+    app.use('/organisation',organisationRouter);
 };

@@ -185,7 +185,7 @@ const verifyOTP = async (req,res) => {
         `
         
         sendEmail(email, subject, html);
-        res.sen({OTP});
+        res.send({OTP});
     } catch (error) {
         console.log(error);
         res.send(error);

@@ -29,6 +29,7 @@ export default function Landing() {
       })
         .then((res) => res.json())
         .then((data) => {
+<<<<<<< HEAD
           switch(data.type){
             case "user":
               navigate(`/userDash/${btoa(user.email)}`);
@@ -42,6 +43,12 @@ export default function Landing() {
             default:
               navigate(`/userType`);
               break;
+=======
+          if (data.type !== "none") {
+            navigate("/serviceProvider");
+          } else {
+            // navigate("/userType");
+>>>>>>> e431100ae6526a233003fb936e0ce24247da8463
           }
           // if (data.type != "none") {
           //   if(data.type == "user"){
@@ -77,19 +84,19 @@ export default function Landing() {
       <Contact />
       <LandingMap />
       {!show && (
-        <div className=" absolute bottom-10 right-5 rounded-2xl">
+        <div className="fixed w-[100vw] h-[100vh]">
           <span  
            onClick={ () => {
             setShow(!show)
            }
            }
-           className="inline-flex items-center shadow-black shadow-md font-semibold justify-center w-20 h-20 rounded-full bg-blue-500 text-white overflow-hidden animate-bounce">
+           className="inline-flex items-center fixed bottom-10 right-5  shadow-black shadow-md font-semibold justify-center w-20 h-20 rounded-full bg-blue-500 text-white overflow-hidden animate-bounce">
             ASK ME
           </span>
         </div>
       )}
       {show && (
-        <div className=" absolute bottom-10 right-5 rounded-2xl">
+        <div className="fixed bottom-10 right-5 rounded-2xl">
           <Askme show={show} setshow={setShow} />
         </div>
       )}

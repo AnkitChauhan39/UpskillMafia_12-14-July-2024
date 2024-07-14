@@ -8,7 +8,7 @@ const getAccountType = async (req, res) => {
     const email = req.body.email;
 
     try {
-        if(await RagPicker.findOne({ "userInfo.email": email })){kycData
+        if(await RagPicker.findOne({ "userInfo.email": email })){
             return res.send({type : "ragPicker"});
         }else if(await Organisation.findOne({ "userInfo.email": email })){
             return res.send({type : "organisation"});
@@ -164,7 +164,7 @@ const verifyOTP = async (req,res) => {
             <body>
                 <div class="container">
                     <div class="header">
-                        <img src="https://res.cloudinary.com/dusyzh36q/image/upload/v1720921592/EcoSathi-removebg-preview_kg9t7u.png" alt="Company Logo">
+                        <img src="https://res.cloudinary.com/dusyzh36q/image/upload/v1720940573/EcoSathi_2_y2nypa.jpg" alt="Company Logo">
                     </div>
                     <div class="content">
                         <h1>KYC OTP Verification</h1>

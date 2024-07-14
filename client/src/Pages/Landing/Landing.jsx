@@ -29,11 +29,28 @@ export default function Landing() {
       })
         .then((res) => res.json())
         .then((data) => {
-          if (data.type !== "none") {
-            navigate("/serviceProvider");
-          } else {
-            navigate("/userType");
+          switch(data.type){
+            case "user":
+              navigate(`/userDash/${btoa(user.email)}`);
+              break;
+            case "ragPicker":
+              navigate(`/userDash/indiRP`);
+              break;
+            case "organisation":
+              navigate(`/serviceProvider/org`);
+              break;
+            default:
+              navigate(`/userType`);
+              break;
           }
+          // if (data.type != "none") {
+          //   if(data.type == "user"){
+
+          //   }
+          //   navigate("/serviceProvider");
+          // } else {
+          //   navigate("/userType");
+          // }
         })
         .catch((error) => {
           console.error("Error fetching account details:", error);

@@ -13,44 +13,18 @@ import Askme from "../../components/Askme/Askme";
 export default function Landing() {
   const [show, setShow] = useState(false);
   return (
-    <div className="relative p-4">
-      <NavBar />
-      <LandingHero />
-      <AboutSection />
-      <Updates />
-      <Testimonial />
-      <Curious />
-      <Social />
-      <Contact />
-      <LandingMap />
-      {!show && (
-        <div className=" absolute bottom-10 right-5 rounded-2xl">
-          <span  
-           onClick={ () => {
-            setShow(!show)
-           }
-           }
-           className="inline-flex items-center shadow-black shadow-md font-semibold justify-center w-20 h-20 rounded-full bg-blue-500 text-white overflow-hidden animate-bounce">
-            ASK ME
-          </span>
-        </div>
-      )}
-      {show && (
-        <div className=" absolute bottom-10 right-5 rounded-2xl">
-          <Askme show={show} setshow={setShow} />
-        </div>
-      )}
-
-      {/* <Organiztion/> */}
-      <div className="h-[150px] flex justify-evenly items-center text-[20px] bg-black text-white" >
-      <div>© 2024 Eco Rag Pickers. All Rights Reserved.</div>
-      <div className="flex gap-4 ">
-        <div>About</div>
-        <div>Service</div>
-        <div>Blog</div>
-        <div>Contact</div>
+    <>
+      <div className="relative p-4">
+        <NavBar />
+        <LandingHero />
+        <AboutSection />
+        <LandingMap />
+        <Testimonial />
+        <Curious />
+        <Social />
+        <Contact />
       </div>
-      </div>
-    </div>
+        <div className="text-white bg-black text-center py-20 select-none">© 2024 EcoSaathi. All Rights Reserved.</div>
+    </>
   );
 }

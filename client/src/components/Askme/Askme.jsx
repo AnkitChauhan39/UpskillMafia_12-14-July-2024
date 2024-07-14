@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IoIosArrowDown } from "react-icons/io";
+import { RxCross2 } from "react-icons/rx";
 
 const Askme = ({show,setshow}) => {
   const [messages, setMessages] = useState([]);
@@ -19,7 +19,7 @@ const Askme = ({show,setshow}) => {
         Ask Me Anything
         </span>
         <span>
-          <IoIosArrowDown
+          <RxCross2
             className="text-[24px] cursor-pointer "
             onClick={() => {
               setshow(!show);

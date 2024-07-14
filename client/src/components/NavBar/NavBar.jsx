@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useEffect } from "react";
-import logo from "../../assets/EcoSathi (2).jpg";
+import logo from "../../assets/Images/Logo.jpeg";
 import PrimaryBtn from "../Primary Btn/PrimaryBtn";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -67,13 +67,13 @@ const NavBar = memo(() => {
       </div>
       <div className="navLinks lg:gap-14 sm:gap-6 font-semibold hidden md:flex">
         <div className="cursor-pointer font-bold hover:text-opacity-50 text-black">
-          Home
+          <a href="#home">Home</a>
         </div>
         <div className="cursor-pointer font-bold hover:text-opacity-50 text-black">
-          About
+          <a href="#about">About</a>
         </div>
         <div className="cursor-pointer font-bold hover:text-opacity-50 text-black">
-          Contact
+          <a href="#contact">Contact</a>
         </div>
       </div>
       <div className="callToAction flex gap-4 items-center">

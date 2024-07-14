@@ -6,6 +6,7 @@ export default function LandingHero() {
   const { loginWithRedirect } = useAuth0();
   return (
     <div
+    id="home"
       className="h-[95vh] text-center flex flex-col justify-end items-center gap-4 text-white sm:pb-32 pb-20 border-green-800 border-2 rounded-xl after:content-[''] after:absolute after:w-full after:h-full after:bg-black after:top-0 after:bg-opacity-30 overflow-hidden after:z-0 relative bg-center"
       style={{
         backgroundImage:

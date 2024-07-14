@@ -40,7 +40,7 @@ const AboutSection = memo(() => {
     },
 ], []);
 return (
-    <div className="flex flex-col gap-10 justify-center min-h-dvh h-fit items-center pt-20">
+    <div className="flex flex-col gap-10 justify-center min-h-dvh h-fit items-center pt-20" id="about">
       <div className="heading text-5xl font-bold text-center">What we do</div>
       <div className="description text-xl text-center">
         At EcoSaath, we are committed to empowering rag pickers while providing

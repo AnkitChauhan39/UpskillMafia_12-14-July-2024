@@ -2,15 +2,15 @@ import React, { memo } from "react";
 import PrimaryBtn from "../Primary Btn/PrimaryBtn";
 import { RxHamburgerMenu } from "react-icons/rx";
 import {useAuth0} from "@auth0/auth0-react"
+import logo from "../../assets/EcoSathi (2).jpg"
 
-
-const NavBar = memo(() => {
+const NavBar = memo(() => { 
   const { loginWithRedirect } = useAuth0();
   return (
     <div className="p-4 rounded-full justify-between flex bg-white bg-opacity-70 items-center fixed top-8 left-8 z-10 right-8">
       <div className="logo flex items-center gap-4">
         <div className="img bg-black w-32 max-w-full max-[400px]:w-24 overflow-hidden rounded-full flex-1 aspect-[128/56] ">
-          {/* <img src="" alt="" className='w-full h-full object-cover' /> */}
+          <img src={logo} alt="" className='w-full h-full object-cover' />
         </div>
         <div className="name h-full text-xl font-bold">EcoSaathi</div>
       </div>

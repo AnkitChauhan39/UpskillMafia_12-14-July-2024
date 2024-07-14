@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
 const Askme = ({show,setshow}) => {
-  const [messages, setMessages] = useState([
-    { text: "sadasdasdasd", sender: "user" },
-    { text: "asdada", sender: "bot" },
-  ]);
+  const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
 
   const handleSend = () => {
@@ -47,12 +44,20 @@ const Askme = ({show,setshow}) => {
       <div className="flex p-4 border-t border-gray-300">
         <input
           type="text"
+          onKeyDown={(e) => {
+            if(e.key !== "Enter" )
+              {
+                return;
+              }
+              handleSend();
+          }}
           value={input}
           onChange={(e) => setInput(e.target.value)}
           className="flex-1 p-2 border border-gray-300 rounded-lg"
         />
         <button
           onClick={handleSend}
+          
           className="ml-2 p-2 px-6 bg-blue-500 font-semibold text-white rounded-full"
         >
           Send

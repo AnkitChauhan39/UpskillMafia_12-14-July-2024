@@ -1,18 +1,24 @@
 import React from "react";
 import Testimo from "./Testimo";
+import man1 from "../../assets/Images/man1.jpeg"
+import man2 from "../../assets/Images/man2.jpeg"
+import girl from "../../assets/Images/girl.jpeg"
 
 const data = [
   {
+    src:girl,
     rev: "Incredible service! Maxwell Green connected me with a reliable rag picker who transformed my view on recycling",
     name: "Samantha Bright",
   },
   {
-    rev: "Incredible service! Maxwell Green connected me with a reliable rag picker who transformed my view on recycling",
-    name: "Samantha Bright",
+    src:man1,
+    rev: "Luna Swift's dedication to building trust is commendable. i found a  gem in the rag picker she recommended!",
+    name: "Ethan Blaze",
   },
   {
-    rev: "Incredible service! Maxwell Green connected me with a reliable rag picker who transformed my view on recycling",
-    name: "Samantha Bright",
+    src:man2,
+    rev: "Ecosathi made the payment process seamless.I felt secure and supported throught the transcation",
+    name: "Jhon steel",
   },
 ];
 
@@ -22,7 +28,7 @@ const Testimonial = () => {
       <div className="p-8 text-[44px] font-bold">Testimonials</div>
       <div className="flex justify-around gap-2 flex-wrap py-6 px-4">
         {data.map((ele, index) => {
-          return <Testimo rev={ele.rev} name={ele.name} />;
+          return <Testimo rev={ele.rev} name={ele.name} src={ele.src} />;
         })}
       </div>
       <div className="py-10 mt-10 flex flex-wrap justify-around gap-[100px]">

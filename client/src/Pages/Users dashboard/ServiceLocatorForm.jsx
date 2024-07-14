@@ -33,6 +33,8 @@ const ServiceLocatorForm = memo(() => {
                 type={elem.type}
                 placeholder={elem.placeholder}
                 className={`border rounded-full p-4 max-w-96 w-full`}
+                value={elem.name}
+                name={elem.name}
                 onChange={changeHandler}
               />
               {index < inputFilelds.length - 1 && (

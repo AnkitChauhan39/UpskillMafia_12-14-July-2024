@@ -1,9 +1,10 @@
 import React, { memo, useCallback, useMemo, useState } from "react";
 import PrimaryBtn from "../../components/Primary Btn/PrimaryBtn";
 import { useNavigate } from "react-router-dom";
-
+import { useAuth0 } from "@auth0/auth0-react";
 
 const UserType = memo(() => {
+  const { user } = useAuth0();
   const navigate = useNavigate();
   const [userType, setUserType] = useState(-1);
   const userTypes = useMemo(
@@ -18,6 +19,7 @@ const UserType = memo(() => {
   const redirect = useCallback(() => {
     if (Number(userType) == 0) {
       //navigate to user page
+      navigate(`/userDash/${btoa(user?.email)}`);
     } else if (Number(userType) == 1) {
       //navigate to organisation dashboard
       navigate("/individualReg");
@@ -52,7 +54,6 @@ const UserType = memo(() => {
       >
         Next
       </PrimaryBtn>
-      
     </div>
   );
 });

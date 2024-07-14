@@ -16,6 +16,7 @@ import { GiMoneyStack } from "react-icons/gi";
 import { BsBuildingAdd, BsBuildingCheck } from "react-icons/bs";
 import UsersNavBar from "../../components/Dashboard navBar/UsersNavBar";
 import { useParams } from "react-router-dom";
+import MapComp from "../Users dashboard/MapComp";
 
 const ServiceProvider = memo(() => {
   const { accountType } = useParams();
@@ -189,6 +190,7 @@ const ServiceProvider = memo(() => {
               )}
             </div>
           </div>
+          <MapComp />
         </div>
         <div className="flex-1 flex flex-col gap-4 sm:order-1">
           <div className="notificationSection flex-1 flex flex-col gap-2 min-h-0">

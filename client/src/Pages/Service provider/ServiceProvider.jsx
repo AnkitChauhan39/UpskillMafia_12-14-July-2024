@@ -17,12 +17,14 @@ import { BsBuildingAdd, BsBuildingCheck } from "react-icons/bs";
 import UsersNavBar from "../../components/Dashboard navBar/UsersNavBar";
 import { useParams } from "react-router-dom";
 import MapComp from "../Users dashboard/MapComp";
+import { useAuth0 } from "@auth0/auth0-react";
+import SERVER_URL from "../../constants.mjs";
 
 const ServiceProvider = memo(() => {
   const { accountType } = useParams();
+  const { user } = useAuth0();
   // console.log(accountType);
   const [userDetails, setUserDetails] = useState({
-    isOrganisation: true,
     Notification: [
       {
         type: "workNotification",
@@ -148,6 +150,31 @@ const ServiceProvider = memo(() => {
       return { ...prevState, Notification: Notifications };
     });
   }, []);
+  const getRagPickersData = useCallback((email) => {
+    fetch(`${SERVER_URL}/ragPicker/getRagPickerData`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ ragPicker: email }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.ragPickerData);
+        // const { earnings, notifications } = data.ragPickerData;
+        // setUserDetails((prevState) => ({
+        //   ...prevState,
+        //   earnings,
+        //   Notification: notifications,
+        // }));
+      })
+      .catch((err) => console.error(err));
+  }, []);
+  useEffect(() => {
+    if (user) {
+      getRagPickersData(user.email);
+    }
+  }, [user]);
   return (
     <div className="p-4 flex flex-col gap-8 h-dvh sm:overflow-hidden">
       {/* header */}
@@ -158,7 +185,7 @@ const ServiceProvider = memo(() => {
           <div className="earningsSection flex flex-col gap-4">
             <h1 className="sm:text-3xl font-bold text-xl">Earnings:</h1>
             <div className="earningsSection flex gap-4 flex-wrap flex-1">
-              <div className="todaysEarning p-4 rounded-full flex items-center gap-4 shadow-[0_0_8px_lightgray] px-10 max-[600px]:mx-auto">
+              {/* <div className="todaysEarning p-4 rounded-full flex items-center gap-4 shadow-[0_0_8px_lightgray] px-10 max-[600px]:mx-auto">
                 <div className="icon">
                   <GiReceiveMoney size="3rem" />
                 </div>
@@ -166,13 +193,20 @@ const ServiceProvider = memo(() => {
                   <div className="amount text-3xl font-bold">$10</div>
                   <div className="description">Today's Earnings</div>
                 </div>
-              </div>
+              </div> */}
               <div className="totalEarning p-4 rounded-full flex items-center gap-4 shadow-[0_0_8px_lightgray] px-10 max-[600px]:mx-auto">
                 <div className="icon">
                   <GiMoneyStack size="3rem" />
                 </div>
                 <div className="earningDetails">
-                  <div className="amount text-3xl font-bold">$5252</div>
+                  <div className="amount text-3xl font-bold">
+                    $
+                    {userDetails.earnings.length !== 0
+                      ? userDetails.earnings.reduce(
+                          (total, elem) => total + elem.amt
+                        )
+                      : 0}
+                  </div>
                   <div className="description">Total Earnings</div>
                 </div>
               </div>

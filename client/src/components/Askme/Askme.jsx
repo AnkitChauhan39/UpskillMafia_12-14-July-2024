@@ -36,7 +36,7 @@ const Askme = ({ show, setshow }) => {
     }
   };
   return (
-    <div className="shadow-lg shadow-black border bg-white rounded-2xl w-full h-full flex flex-col">
+    <div className="shadow-lg shadow-black border bg-white rounded-2xl w-full h-full flex flex-col z-50">
       <div className="p-4 bg-blue-500 text rounded-t-2xl flex justify-between items-center text-white font-semibold">
         <span>Ask Me Anything</span>
         <span>

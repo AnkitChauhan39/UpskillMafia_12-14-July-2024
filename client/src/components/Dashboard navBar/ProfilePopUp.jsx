@@ -12,7 +12,7 @@ const ProfilePopUp = memo(() => {
     logout({ logoutParams: { returnTo: window.location.origin } });
   }, []);
   return (
-    <div className="bg-white rounded-xl overflow-hidden shadow-[0_0_4px_grey] cursor-pointer">
+    <div className="bg-white rounded-xl overflow-hidden shadow-[0_0_4px_grey] cursor-pointer z-50">
       {accountType == "indiRP" && (
         <div className="joinOrg text-xl p-2 px-4 flex gap-2 items-center hover:bg-gray-200 active:bg-gray-300">
           <BsBuildingCheck size="1.5rem" /> Join organisation

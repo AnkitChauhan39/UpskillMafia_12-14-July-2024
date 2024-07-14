@@ -9,7 +9,7 @@ const Ques = ({ ques, ans }) => {
 //     <div className=" w-[800px] max-w-full py-6 px-10 border shadow-md  rounded-2xl ">
 //       <div className="text-[24px] font-semibold flex justify-between items-center py-2">
 // =======
-    <div className=" md:w-[800px] py-6 px-10 border shadow-md  rounded-2xl ">
+    <div className=" md:w-[800px] py-6 px-10 border shadow-md rounded-2xl w-full">
       <div className=" text-[18px] md:text-[24px] font-semibold flex justify-between items-center py-2">
 {/* >>>>>>> 515f26d8be7c24652b932a4a4c01d15a1f12d57d */}
         <span>{ques}</span>

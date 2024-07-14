@@ -66,11 +66,11 @@ const WorkNotification = memo(
             </>
           ) : (
             <>
-              <div className="expectedTimeToCompleteWork">
+              <div className="expectedTimeToCompleteWork text-center">
                 <IoTimeOutline size="2rem" className="mx-auto" />
                 {expectedTimeToCompleteWork}
               </div>
-              <div className="budget">
+              <div className="budget text-center">
                 <GiTakeMyMoney size="2rem" className="mx-auto" />
                 {budget}
               </div>

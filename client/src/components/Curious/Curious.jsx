@@ -69,25 +69,27 @@ const Curious = () => {
   );
 
   return (
-// <<<<<<< HEAD
-//     <div className="p-10 flex justify-center items-center flex-col">
-//       <div className="text-[44px] font-semibold">Curious Minds Ask</div>
-//       <div className="flex flex-col gap-3 justify-center items-center">
-//         {faqs.map((ele, index) => {
-//           return <Ques key={ele.question} ques={ele.question} ans={ele.answer} />;
-//         })}
-//       </div>
-// =======
-    <div className='p-10 flex justify-center items-center flex-col' >
-        <div className=' text-[28px] md:text-[44px] font-bold' >Curious Minds Ask</div>
-        <div className='md:w-[1200px] p-10 flex flex-col gap-3 justify-center items-center' >
-            {
-                faqs.map( (ele,index) => {
-                    return <Ques key={ele.question} ques={ele.question} ans={ele.answer}/>
-                })
-            }
-        </div>
-{/* >>>>>>> 515f26d8be7c24652b932a4a4c01d15a1f12d57d */}
+    // <<<<<<< HEAD
+    //     <div className="p-10 flex justify-center items-center flex-col">
+    //       <div className="text-[44px] font-semibold">Curious Minds Ask</div>
+    //       <div className="flex flex-col gap-3 justify-center items-center">
+    //         {faqs.map((ele, index) => {
+    //           return <Ques key={ele.question} ques={ele.question} ans={ele.answer} />;
+    //         })}
+    //       </div>
+    // =======
+    <div className="p-10 flex justify-center items-center flex-col w-full">
+      <div className=" text-[28px] md:text-[44px] font-bold">
+        Curious Minds Ask
+      </div>
+      <div className="md:w-[700px] p-10 flex flex-col gap-3 justify-center items-center w-full">
+        {faqs.map((ele, index) => {
+          return (
+            <Ques key={ele.question} ques={ele.question} ans={ele.answer} />
+          );
+        })}
+      </div>
+      {/* >>>>>>> 515f26d8be7c24652b932a4a4c01d15a1f12d57d */}
     </div>
   );
 };

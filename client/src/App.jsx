@@ -58,7 +58,7 @@ function App() {
         </div>
       )}
       {show && (
-        <div className="fixed bottom-10 right-5 rounded-2xl w-11/12 max-w-80 h-96">
+        <div className="fixed bottom-10 right-5 rounded-2xl w-11/12 max-w-80 h-96 z-10">
           <Askme show={show} setshow={setShow} />
         </div>
       )}

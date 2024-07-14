@@ -8,7 +8,7 @@ const getAccountType = async (req, res) => {
     const email = req.body.email;
 
     try {
-        if(await RagPicker.findOne({ "userInfo.email": email })){
+        if(await RagPicker.findOne({ "userInfo.email": email })){kycData
             return res.send({type : "ragPicker"});
         }else if(await Organisation.findOne({ "userInfo.email": email })){
             return res.send({type : "organisation"});
@@ -25,7 +25,6 @@ const getAccountType = async (req, res) => {
 
 const auth = async (req, res) => {
     const data = req.body;
-    console.log(data.userInfo);
 
     try {
         if (!data) {

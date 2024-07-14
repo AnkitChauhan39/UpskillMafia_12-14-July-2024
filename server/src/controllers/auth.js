@@ -165,7 +165,7 @@ const verifyOTP = async (req,res) => {
             <body>
                 <div class="container">
                     <div class="header">
-                        <img src="YOUR_LOGO_URL" alt="Company Logo">
+                        <img src="https://res.cloudinary.com/dusyzh36q/image/upload/v1720921592/EcoSathi-removebg-preview_kg9t7u.png" alt="Company Logo">
                     </div>
                     <div class="content">
                         <h1>KYC OTP Verification</h1>

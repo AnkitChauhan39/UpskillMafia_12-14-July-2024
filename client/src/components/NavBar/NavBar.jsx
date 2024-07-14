@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useContext, useEffect } from "react";
+import React, { memo, useCallback, useContext, useEffect, useState } from "react";
 import logo from "../../assets/Images/Logo.jpeg";
 import PrimaryBtn from "../Primary Btn/PrimaryBtn";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -6,11 +6,13 @@ import { useAuth0 } from "@auth0/auth0-react";
 import SERVER_URL from "../../constants.mjs";
 import { useNavigate } from "react-router-dom";
 import ScreenLoaderContext from "../../context/ScreenLoaderContext";
+import SideBar from "../Side bar/SideBar";
 
 const NavBar = memo(() => {
+  const [showSidebar, setShowSideBar] = useState(false);
   const { showLoader, setShowLoader } = useContext(ScreenLoaderContext);
-  console.log(showLoader);
-  console.log(setShowLoader);
+  // console.log(showLoader);
+  // console.log(setShowLoader);
   const navigate = useNavigate();
   const { isAuthenticated, user, loginWithRedirect } = useAuth0();
 
@@ -56,9 +58,15 @@ const NavBar = memo(() => {
       getAccountDetail(user.email);
     }
   }, [isAuthenticated, user, getAccountDetail]);
+  const sideBarToggle = useCallback(() => {
+    setShowSideBar(prevState => !prevState);
+  }, []);
 
   return (
     <div className="p-4 rounded-full justify-between flex bg-white bg-opacity-70 items-center fixed top-8 left-8 z-10 right-8">
+      <div className={`absolute z-10 transition-all duration-500 ${showSidebar ? "right-0" : "-right-96"} top-20`} onClick={sideBarToggle}>
+        <SideBar />
+      </div>
       <div className="logo flex items-center gap-4">
         <div className="img bg-black w-32 max-w-full max-[400px]:w-24 overflow-hidden rounded-full flex-1 aspect-[128/56] ">
           <img src={logo} alt="" className="w-full h-full object-cover" />
@@ -83,7 +91,7 @@ const NavBar = memo(() => {
         >
           Join now
         </PrimaryBtn>
-        <div className="hamburger shrink-0 md:hidden">
+        <div className="hamburger shrink-0 md:hidden" onClick={sideBarToggle}>
           <RxHamburgerMenu size="2rem" />
         </div>
       </div>

@@ -2,6 +2,7 @@ import React, { memo, useCallback, useMemo, useState } from "react";
 import PrimaryBtn from "../../components/Primary Btn/PrimaryBtn";
 import { useNavigate } from "react-router-dom";
 
+
 const UserType = memo(() => {
   const navigate = useNavigate();
   const [userType, setUserType] = useState(-1);
@@ -51,6 +52,7 @@ const UserType = memo(() => {
       >
         Next
       </PrimaryBtn>
+      
     </div>
   );
 });

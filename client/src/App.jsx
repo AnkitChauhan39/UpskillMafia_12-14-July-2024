@@ -6,9 +6,11 @@ import IndividualReg from "./Pages/Individual Registration/IndividualReg";
 import Organiztion from "./components/Siginupforms/Organiztion";
 import UsersDashboard from "./Pages/Users dashboard/UsersDashboard";
 import Askme from "./components/Askme/Askme";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import ScreenLoaderContext from "./context/ScreenLoaderContext";
 
 function App() {
+  const { showLoader } = useContext(ScreenLoaderContext);
   const [show, setShow] = useState(false);
   const router = createBrowserRouter([
     {
@@ -38,7 +40,9 @@ function App() {
     },
   ]);
 
-  return (
+  return showLoader ? (
+    <div class="loader absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+  ) : (
     <>
       <RouterProvider router={router} />
       {!show && (

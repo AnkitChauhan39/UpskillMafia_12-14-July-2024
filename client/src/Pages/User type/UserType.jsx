@@ -2,6 +2,7 @@ import React, { memo, useCallback, useMemo, useState } from "react";
 import PrimaryBtn from "../../components/Primary Btn/PrimaryBtn";
 import { useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import SERVER_URL from "../../constants.mjs";
 
 const UserType = memo(() => {
   const { user } = useAuth0();
@@ -16,14 +17,33 @@ const UserType = memo(() => {
     setUserType(userTypeId);
   }, []);
 
+  const sendUserDetail = useCallback(() => {
+    fetch(`${SERVER_URL}/auth`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ userInfo: user }),
+    })
+      .then((res) => res.json())
+      .then(({ message }) => {
+        console.log(message);
+        navigate(`/userDash/${btoa(user?.email)}`);
+      });
+  }, [user]);
+
   const redirect = useCallback(() => {
     if (Number(userType) == 0) {
       //navigate to user page
-      navigate(`/userDash/${btoa(user?.email)}`);
+      // console.log(Number(userType));
+      sendUserDetail();
     } else if (Number(userType) == 1) {
-      //navigate to organisation dashboard
+      // console.log(Number(userType));
+      //navigate to individual registration page
       navigate("/individualReg");
     } else {
+      // console.log(Number(userType));
+      //navigate to organistion registration
       navigate("/orgReg");
     }
   }, [userType]);

@@ -1,12 +1,16 @@
-import React, { memo, useCallback, useEffect } from "react";
+import React, { memo, useCallback, useContext, useEffect } from "react";
 import logo from "../../assets/Images/Logo.jpeg";
 import PrimaryBtn from "../Primary Btn/PrimaryBtn";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useAuth0 } from "@auth0/auth0-react";
 import SERVER_URL from "../../constants.mjs";
 import { useNavigate } from "react-router-dom";
+import ScreenLoaderContext from "../../context/ScreenLoaderContext";
 
 const NavBar = memo(() => {
+  const { showLoader, setShowLoader } = useContext(ScreenLoaderContext);
+  console.log(showLoader);
+  console.log(setShowLoader);
   const navigate = useNavigate();
   const { isAuthenticated, user, loginWithRedirect } = useAuth0();
 
@@ -27,7 +31,7 @@ const NavBar = memo(() => {
         console.log(data);
         switch (data.type) {
           case "user":
-            navigate(`/userDash/${btoa(user.email)}`);
+            navigate(`/userDash/${btoa(email)}`);
             break;
           case "ragPicker":
             navigate(`/serviceProvider/indiRP`);
@@ -38,24 +42,20 @@ const NavBar = memo(() => {
           default:
             navigate(`/userType`);
         }
+        setShowLoader(false);
       })
       .catch((error) => {
         console.error("Error fetching account details:", error);
+        setShowLoader(false);
       });
   }, []);
 
-  const handleClick = useCallback(() => {
-    console.log(isAuthenticated);
-    console.log(user);
+  useEffect(() => {
     if (isAuthenticated && user) {
+      setShowLoader(true);
       getAccountDetail(user.email);
-    } else {
-      loginWithRedirect();
     }
-  }, [isAuthenticated, user]);
-
-  // useEffect(() => {
-  // }, [isAuthenticated, user, getAccountDetail]);
+  }, [isAuthenticated, user, getAccountDetail]);
 
   return (
     <div className="p-4 rounded-full justify-between flex bg-white bg-opacity-70 items-center fixed top-8 left-8 z-10 right-8">
@@ -78,7 +78,7 @@ const NavBar = memo(() => {
       </div>
       <div className="callToAction flex gap-4 items-center">
         <PrimaryBtn
-          onClick={handleClick}
+          onClick={loginWithRedirect}
           className="text-white w-32 h-14 rounded-full font-bold px-6 hidden min-[540px]:block"
         >
           Join now

@@ -21,7 +21,10 @@ const ServiceLocatorForm = memo(() => {
     ],
     []
   );
-  const changeHandler = useCallback(() => {}, []);
+  const changeHandler = useCallback((e) => {
+    const key = e.target.id;
+    setFormData(prevState => ({...prevState, [key]: e.target.value}));
+  }, []);
   return (
     <>
       <div className="Form flex gap-4 items-center mx-auto max-w-full  justify-center lg:flex-row flex-col">
@@ -33,7 +36,7 @@ const ServiceLocatorForm = memo(() => {
                 type={elem.type}
                 placeholder={elem.placeholder}
                 className={`border rounded-full p-4 max-w-96 w-full`}
-                value={elem.name}
+                value={formData[elem.name]}
                 name={elem.name}
                 onChange={changeHandler}
               />

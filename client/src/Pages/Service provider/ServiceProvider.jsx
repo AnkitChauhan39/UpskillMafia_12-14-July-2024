@@ -150,7 +150,7 @@ const ServiceProvider = memo(() => {
       <hr />
       {/* notification */}
       <h1 className="sm:text-3xl font-bold text-xl">Notifications:</h1>
-      <div className="notificationList flex flex-col gap-4">
+      <div className="notificationList flex flex-col gap-4" key={"notificationList"}>
         {userDetails.Notification.length !== 0 ? (
           userDetails.Notification.map((elem, index) => {
             return (
@@ -172,7 +172,7 @@ const ServiceProvider = memo(() => {
             );
           })
         ) : (
-          <div className="text-gray-500 p-4 shadow-[inset_0_0_4px_lightgray] rounded-xl">
+          <div className="text-gray-500 p-4 shadow-[inset_0_0_4px_lightgray] rounded-xl" key={"noNotification"}>
             No Notifications yet!
           </div>
         )}
@@ -238,13 +238,13 @@ const ServiceProvider = memo(() => {
         </div>
       </div>
       <div className="earningHistory">
-        {userDetails.earnings.length !== 0 ? (
+        {/* {userDetails.earnings.length !== 0 ? (
           userDetails.earnings.map((elem) => {})
-        ) : (
+        ) : ( */}
           <div className="text-gray-500 p-4 shadow-[inset_0_0_4px_lightgray] rounded-xl">
             No Earnings yet!
           </div>
-        )}
+        {/* )} */}
       </div>
     </div>
   );

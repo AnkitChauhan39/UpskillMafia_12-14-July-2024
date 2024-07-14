@@ -18,9 +18,11 @@ const UserType = memo(() => {
   const redirect = useCallback(() => {
     if (Number(userType) == 0) {
       //navigate to user page
-    } else {
+    } else if (Number(userType) == 1) {
       //navigate to organisation dashboard
-      navigate("/serviceProvider");
+      navigate("/individualReg");
+    } else {
+      navigate("/orgReg");
     }
   }, [userType]);
 

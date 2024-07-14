@@ -6,6 +6,7 @@ import Landing from "./Pages/Landing/Landing";
 import ServiceProvider from "./Pages/Service provider/ServiceProvider";
 import UserType from "./Pages/User type/UserType";
 import IndividualReg from "./Pages/Individual Registration/IndividualReg";
+import Organiztion from "./components/Siginupforms/Organiztion";
 
 function App() {
   const router = createBrowserRouter([
@@ -15,7 +16,7 @@ function App() {
       errorElement: <h1>404 page not found!</h1>,
     },
     {
-      path: "/serviceProvider",
+      path: "/serviceProvider/:accountType",
       element: <ServiceProvider />,
     },
     {
@@ -25,6 +26,10 @@ function App() {
     {
       path: "/individualReg",
       element: <IndividualReg />
+    },
+    {
+      path: "/orgReg",
+      element: <Organiztion />
     }
   ]);
 

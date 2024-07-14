@@ -3,7 +3,7 @@ import PrimaryBtn from "../../components/Primary Btn/PrimaryBtn";
 import { useNavigate } from "react-router-dom";
 
 const UserType = memo(() => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const [userType, setUserType] = useState(-1);
   const userTypes = useMemo(
     () => ["client", "Individual Worker", "Organisation"],
@@ -15,11 +15,13 @@ const UserType = memo(() => {
   }, []);
 
   const redirect = useCallback(() => {
-    if(Number(userType) == 0){
-        //navigate to user page
-    }else{
-        //navigate to organisation dashboard
-        navigate("/serviceProvider");
+    if (Number(userType) == 0) {
+      //navigate to user page
+    } else if (Number(userType) == 1) {
+      //navigate to organisation dashboard
+      navigate("/individualReg");
+    } else {
+      navigate("/orgReg");
     }
   }, [userType]);
 

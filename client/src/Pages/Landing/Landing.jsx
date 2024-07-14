@@ -42,6 +42,15 @@ export default function Landing() {
       )}
 
       {/* <Organiztion/> */}
+      <div className="h-[150px] flex justify-evenly items-center text-[20px] bg-black text-white" >
+      <div>© 2024 Eco Rag Pickers. All Rights Reserved.</div>
+      <div className="flex gap-4 ">
+        <div>About</div>
+        <div>Service</div>
+        <div>Blog</div>
+        <div>Contact</div>
+      </div>
+      </div>
     </div>
   );
 }

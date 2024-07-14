@@ -20,8 +20,8 @@ const NavBar = memo(() => {
       body: JSON.stringify({ email }),
     })
       .then((res) => {
-        res.json();
         console.log(res);
+        return res.json();
       })
       .then((data) => {
         console.log(data);
@@ -30,7 +30,7 @@ const NavBar = memo(() => {
             navigate(`/userDash/${btoa(user.email)}`);
             break;
           case "ragPicker":
-            navigate(`/userDash/indiRP`);
+            navigate(`/serviceProvider/indiRP`);
             break;
           case "organisation":
             navigate(`/serviceProvider/org`);

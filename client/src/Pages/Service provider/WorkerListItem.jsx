@@ -6,7 +6,7 @@ import { SlOptionsVertical } from "react-icons/sl";
 
 const WorkerListItem = memo(({ workerName, ratings, availability }) => {
   return (
-    <div className="sm:p-4 p-2 rounded-xl shadow-[0_0_8px_lightgray] flex items-center sm:gap-10 gap-4 sm:w-[500px] w-full">
+    <div className="sm:p-4 p-2 rounded-xl shadow-[0_0_8px_lightgray] flex items-center sm:gap-10 gap-4 sm:max-w-[450px] w-1/2">
       <div className="name flex-1 capitalize text-xl font-bold">
         {workerName}
       </div>

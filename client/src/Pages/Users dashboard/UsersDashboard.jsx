@@ -1,6 +1,6 @@
 import React, { memo, useState } from "react";
 import { GiMoneyStack, GiReceiveMoney } from "react-icons/gi";
-import UsersNavBar from "./UsersNavBar";
+import UsersNavBar from "../../components/Dashboard navBar/UsersNavBar";
 import MapComp from "./MapComp";
 import ServiceLocatorForm from "./ServiceLocatorForm";
 

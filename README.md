@@ -33,7 +33,7 @@ By connecting users directly with local ragpickers, EcoSathi ensures fair pricin
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/jiteshvarade/UpskillMafia_12-14-July-2024.git
+    git clone https://github.com/jiteshvarade/EcoSathi.git
     cd EcoSathi
     ```
 

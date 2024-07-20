@@ -68,8 +68,9 @@ Contributions are welcome! Please fork the repository and create a pull request.
 
 This project is licensed under the MIT License.
 
+<!--
 ## Contact
 
 For any inquiries, please contact us at [your-email@example.com].
-
+-->
 EcoSathi: Connect, Collect, Conserve.
